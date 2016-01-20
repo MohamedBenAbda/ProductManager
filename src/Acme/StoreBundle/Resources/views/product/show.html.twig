@@ -1,0 +1,33 @@
+{% extends'::base.html.twig' %}
+
+
+
+{% block body %}
+
+    <h1>  product</h1>
+
+
+
+    <h3> name  :</h3> <h2> {{ prod.name }} </h2>
+    <h3> price  :</h3> <h2>{{ prod.price }}</h2>
+    <h3> category  :</h3> <h2> {{ prod.categorie.name }}</h2>
+
+
+
+{#    {{ dump(prod.tags) }}
+
+    {{ dump(tags) }}#}
+
+{#    <ul   }}>
+
+        {% for tag in tags %}
+            <li>{{ form_row(tag.name) }}</li>
+        {% endfor %}
+
+    </ul>#}
+
+
+
+    {{ dump(prod) }}
+    <a href="{{ path('products_list') }}"> Back to list products</a>
+{% endblock %}

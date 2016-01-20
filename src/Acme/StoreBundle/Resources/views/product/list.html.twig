@@ -1,0 +1,47 @@
+{% extends'::base.html.twig' %}
+
+{% block body %}
+
+    <table>
+
+        <thead>
+        <tr> name</tr>
+        <tr> price</tr>
+        <tr> category</tr>
+        <tr> tags</tr>
+        <tr> show</tr>
+        <tr> update</tr>
+        <tr> delete</tr>
+        </thead>
+
+        {% for product in products %}
+            <tbody>
+
+
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+
+
+            <td>{{ product.categorie.name  |default('null') }}</td>
+
+            <td>{{ product.getT |default('null') }}</td>
+
+
+            <td><a href="{{ path('product_show', {'id': product.id }) }}">Show</a></td>
+            <td><a href="{{ path('product_update', {'id': product.id }) }}">Update</a></td>
+            <td><a href="{{ path('products_delete', {'id': product.id }) }}">Delete</a></td>
+            </br>
+
+            </tbody>
+
+
+        {% endfor %}
+
+
+    </table>
+
+
+
+    <a href="{{ path('products_new') }}"> Create new product</a>
+
+{% endblock %}

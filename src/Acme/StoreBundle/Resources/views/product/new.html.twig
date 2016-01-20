@@ -1,0 +1,14 @@
+{% extends'@AcmeStore/base.html.twig' %}
+
+
+
+{% block body %}
+
+    <h1> New product</h1>
+
+
+    {{ include('AcmeStoreBundle:product:_form.html.twig') }}
+
+
+    <a href="{{ path('products_list') }}"> Back to list products</a>
+{% endblock %}

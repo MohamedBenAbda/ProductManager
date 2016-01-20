@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+
+
+            <link href="{{ asset('bundles/framework/css/style.css') }}" rel="stylesheet">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+
+
+            <!-- jQuery -->
+            <script src="{{ asset('bundles/Public/js/jquery.js') }}"></script>
+            <script src="{{ asset('bundles/Public/js/dynamicAddTad.js') }}"></script>
+
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="{{ asset('bundles/Public/js/jquery.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

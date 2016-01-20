@@ -1,0 +1,36 @@
+
+
+{{ form_start(form) }}
+
+<div class="form-control">
+    {{ form_row(form.name) }}
+    {{ form_row(form.price) }}
+    {{ form_row(form.categorie) }}
+
+    <h3>Tags</h3>
+    <ul class="tags" data-prototype="{{ form_widget(form.tags.vars.prototype)|e }}" }}>
+
+        {% for tag in form.tags %}
+            <li>{{ form_row(tag.name) }}</li>
+        {% endfor %}
+
+    </ul>
+
+
+    {% block javascripts %}
+
+
+        <script type="text/javascript" src="{{ asset('bundles/Public/js/dynamicAddTad.js') }}"></script>
+
+    {% endblock %}
+
+</div>
+
+
+<button type="submit" class="btn btn-primary"> Save</button>
+
+
+{{ form_end(form) }}
+
+
+

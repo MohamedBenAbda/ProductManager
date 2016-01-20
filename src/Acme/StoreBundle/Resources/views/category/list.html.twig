@@ -1,0 +1,39 @@
+
+{% extends'::base.html.twig' %}
+
+{% block body %}
+
+    <table>
+
+        <thead>
+        <tr> name</tr>
+        <tr> show </tr>
+        <tr> update</tr>
+        <tr> delete</tr>
+        </thead>
+
+        {%for category in categories %}
+            <tbody>
+
+
+            <td>{{ category.name}}</td>
+
+            <td> <a href="{{ path('category_show', {'id': category.id }) }}">Show</a></td>
+            <td> <a href="{{ path('category_update', {'id': category.id }) }}">Update</a></td>
+            <td> <a href="{{ path('category_delete', {'id': category.id }) }}">Delete</a></td>
+            </br>
+
+            </tbody>
+
+
+        {% endfor %}
+
+
+
+    </table>
+
+
+
+    <a href="{{ path('category_new') }}"> Create new categorie</a>
+
+{% endblock %}
